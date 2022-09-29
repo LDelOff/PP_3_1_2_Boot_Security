@@ -13,11 +13,9 @@ import ru.kata.spring.boot_security.demo.service.UserService;
 
 @Component
 public class InitDB implements ApplicationRunner {
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private RoleService roleService;
 
+    private UserService userService;
+    private RoleService roleService;
 
     @Autowired
     public void DataLoader(UserService userService, RoleService roleService) {

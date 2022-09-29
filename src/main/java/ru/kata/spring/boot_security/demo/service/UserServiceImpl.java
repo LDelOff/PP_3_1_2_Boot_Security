@@ -8,15 +8,13 @@ import ru.kata.spring.boot_security.demo.models.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Table;
 import java.util.List;
 import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService{
-    @Autowired
-    private UserDAO userDAO;
-    //@Autowired
-    //private RoleDAO roleDao;
+    private final UserDAO userDAO;
 
     public UserServiceImpl(UserDAO userDAO) {
         this.userDAO = userDAO;

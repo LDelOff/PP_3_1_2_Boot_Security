@@ -4,7 +4,6 @@ import ru.kata.spring.boot_security.demo.models.Role;
 import ru.kata.spring.boot_security.demo.models.User;
 import org.springframework.stereotype.Repository;
 
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -55,6 +54,4 @@ public class UserDAOImpl implements UserDAO {
     public User getByName(String userName) {
         return (User) entityManager.createQuery("FROM User where username = :name").setParameter("name", userName).getSingleResult();
     }
-
-
 }

@@ -9,9 +9,9 @@ import ru.kata.spring.boot_security.demo.models.User;
 
 @Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
-    @Autowired
     private final UserService userService;
 
+    @Autowired
     public UserDetailsServiceImpl(UserService userService) {
         this.userService = userService;
     }
@@ -19,11 +19,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userService.getByName(username);
-
         if (user == null) {
             throw new UsernameNotFoundException("User not found");
         }
-
         return user;
     }
 }
